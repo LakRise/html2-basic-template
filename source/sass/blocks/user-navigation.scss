@@ -1,0 +1,33 @@
+@use "../global/variables.scss";
+
+.user-navigation {
+  @media (min-width: variables.$desktop-width) {
+    gap: 20px;
+  }
+}
+
+.user-navigation__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  min-height: 60px;
+
+  @media (min-width: variables.$tablet-width) {
+    min-height: 80px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 0 20px;
+    justify-content: space-between;
+    gap: 8px;
+  }
+}
+
+.user-navigation__text {
+  display: none;
+
+  @media (min-width: variables.$desktop-width) {
+    display: block;
+  }
+}

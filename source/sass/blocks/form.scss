@@ -1,0 +1,354 @@
+@use "../global/variables.scss";
+
+.form {
+  margin: 0 0 40px;
+  padding: 0;
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 40px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.form__group {
+  margin: 0 0 30px;
+  padding: 0;
+  border: none;
+
+  @media (min-width: variables.$tablet-width) {
+    margin: 0;
+    max-width: 223px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    max-width: 318px;
+
+    &:last-of-type {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.form__title {
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.form__range {
+  position: relative;
+  margin: 9px 0 34px;
+  width: 100%;
+  height: 4px;
+  background-color: #e2e2e2;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 30px;
+    max-width: 223px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 32px;
+  }
+}
+
+.form__range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #9070ec;
+}
+
+.form__range-toggle {
+  position: absolute;
+}
+
+.form__price-wrapper {
+  position: relative;
+  margin: 0 0 1px;
+  display: flex;
+  justify-content: space-between;
+
+  &::before {
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 4px);
+    width: 8px;
+    height: 2px;
+    background-color: #bdbdbd;
+    content: "";
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    &::before {
+      top: 19px;
+    }
+  }
+}
+
+.form__input {
+  margin: 0;
+  padding: 5px 10px 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 118px;
+  min-height: 40px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: variables.$text-color-1;
+  background-color: variables.$main-color-1;
+  text-align: center;
+  border: 2px solid #9070ec;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: #bdbdbd;
+  }
+
+  &:hover {
+    border-color: rgba(144, 112, 236, 0.6);
+  }
+
+  &:focus {
+    border-color: #593cac;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: #f8f8f8;
+    color: #bdbdbd;
+    border-color: #e2e2e2;
+    pointer-events: none;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    width: 88px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    width: 134px;
+  }
+}
+
+.form__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.form__item {
+  width: 100%;
+}
+
+.form__text {
+  font-size: 16px;
+  line-height: 24px;
+
+  &--disabled {
+    color: #bdbdbd;
+  }
+}
+
+.form__label {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  max-width: 220px;
+  cursor: pointer;
+
+  &--disabled {
+    pointer-events: none;
+  }
+}
+
+.form__radio-mark {
+  transform: translateY(-1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: variables.$main-color-1;
+  border: 2px solid #bdbdbd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &::before {
+    display: none;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    content: "";
+    transition: all 0.2s ease;
+  }
+}
+
+.form__radio-input:checked + .form__radio-mark {
+  border-color: variables.$main-color-2;
+
+  &::before {
+    display: flex;
+    background-color: variables.$main-color-2;
+    opacity: 1;
+  }
+}
+
+.form__radio-label:hover .form__radio-mark {
+  border-color: #9070ec;
+
+  &::before {
+    display: flex;
+    background-color: variables.$main-color-2;
+    opacity: 0.25;
+  }
+}
+
+.form__radio-input:focus-visible + .form__radio-mark {
+  border-color: #9070ec;
+
+  &::before {
+    display: flex;
+    background-color: variables.$main-color-2;
+    opacity: 0.25;
+  }
+}
+
+.form__radio-input:active + .form__radio-mark {
+  opacity: 0.6;
+  border-color: variables.$main-color-2;
+
+  &::before {
+    display: flex;
+    background-color: variables.$main-color-2;
+  }
+}
+
+.form__radio-input:active:checked + .form__radio-mark {
+  opacity: 0.6;
+}
+
+.form__radio-input:disabled + .form__radio-mark {
+  background-color: #f8f8f8;
+  border-color: #e2e2e2;
+}
+
+.form__radio-input:disabled:checked + .form__radio-mark::before {
+  display: flex;
+  background-color: #e2e2e2;
+}
+
+.form__checkbox-mark {
+  transform: translateY(-1px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 24px;
+  background-color: #bdbdbd;
+  border: 2px solid #bdbdbd;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+
+  &::before {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-color: variables.$main-color-1;
+    border: none;
+    border-radius: 50%;
+    content: "";
+  }
+}
+
+.form__checkbox-input:checked + .form__checkbox-mark {
+  justify-content: flex-end;
+  border-color: variables.$main-color-2;
+  background-color: variables.$main-color-2;
+}
+
+.form__checkbox-input:focus-visible + .form__checkbox-mark {
+  border-color: #9070ec;
+  background-color: rgba(120, 89, 207, 0.25);
+}
+
+.form__checkbox-label:hover .form__checkbox-mark {
+  border-color: #9070ec;
+  background-color: rgba(120, 89, 207, 0.25);
+}
+
+.form__checkbox-input:active + .form__checkbox-mark {
+  border-color: variables.$main-color-2;
+  background-color: variables.$main-color-2;
+  opacity: 0.6;
+}
+
+.form__checkbox-input:disabled + .form__checkbox-mark {
+  border-color: #e2e2e2;
+  background-color: #e2e2e2;
+
+  &::before {
+    background-color: #f8f8f8;
+  }
+}
+
+.form__checkbox-input:disabled:checked + .form__checkbox-mark::before {
+  background-color: #bdbdbd;
+}
+
+.form__buttons-wrapper {
+  transform: translateY(-1px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-column: -1/1;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    justify-content: space-between;
+  }
+}
+
+.form__button {
+  width: 100%;
+
+  @media (min-width: variables.$tablet-width) {
+    width: auto;
+    max-width: 200px;
+
+    &--submit {
+      min-width: 137px;
+    }
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    min-width: 149px;
+  }
+}

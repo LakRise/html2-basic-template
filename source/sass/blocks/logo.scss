@@ -1,0 +1,50 @@
+@use "../global/variables.scss";
+
+.logo {
+  display: flex;
+  max-width: fit-content;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.logo__image {
+  @media (min-width: variables.$tablet-width) {
+    width: 82px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    width: 170px;
+  }
+
+  &--footer {
+    @media (min-width: variables.$tablet-width) {
+      width: 170px;
+    }
+  }
+}
+
+.logo__text {
+  padding-top: 2px;
+  display: none;
+  font-size: 12px;
+  line-height: 16px;
+  color: variables.$text-color-1;
+
+  &--footer {
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    display: block;
+  }
+}

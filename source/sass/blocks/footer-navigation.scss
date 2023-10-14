@@ -1,0 +1,44 @@
+@use "../global/variables.scss";
+
+.footer-navigation__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  list-style-type: none;
+}
+
+.footer-navigation__item {
+  width: 100%;
+}
+
+.footer-navigation__link {
+  padding: 8px 0;
+  display: flex;
+  width: 100%;
+  color: variables.$text-color-1;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #9070ec;
+  }
+
+  &:focus-visible {
+    color: #9070ec;
+  }
+
+  &:active {
+    color: #593cac;
+  }
+}
+
+.footer-navigation__text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+}

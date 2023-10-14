@@ -1,5 +1,119 @@
+@use "../global/variables.scss";
+
 .header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  padding-top: 4px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-right: 67px;
+    width: 82px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-right: 80px;
+    gap: 20px;
+    width: 316px;
+  }
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+
+  @media (min-width: variables.$tablet-width) {
+    column-gap: 60px;
+    row-gap: 20px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    column-gap: 162px;
+  }
+}
+
+.header__navigation-link {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+  color: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: variables.$main-color-2;
+  }
+
+  &:focus-visible {
+    color: variables.$main-color-2;
+  }
+
+  &:active {
+    color: variables.$text-color-1;
+    background-color: variables.$main-color-4;
+
+    @media (min-width: variables.$tablet-width) {
+      color: variables.$main-color-2;
+    }
+  }
+}
+
+.header__navigation-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.header__navigation-toggle {
+  margin: 0 -20px 0 0;
+  padding: 0;
+  min-width: 60px;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  background-color: variables.$main-color-1;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--closed {
+    background-image: url("../../images/toggle-closed.svg");
+  }
+
+  &--opened {
+    background-image: url("../../images/toggle-opened.svg");
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 1;
+    background-color: variables.$main-color-4;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    display: none;
+  }
 }

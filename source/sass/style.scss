@@ -1,7 +1,20 @@
-/* GLOBAL */
-@import "global/variables";
-@import "global/global";
-@import "global/fonts";
-
-/* BLOCKS */
-@import "blocks/header";
+@use "global/fonts.scss";
+@use "global/global.scss";
+@use "blocks/page.scss";
+@use "blocks/container.scss";
+@use "blocks/visually-hidden.scss";
+@use "blocks/header.scss";
+@use "blocks/logo.scss";
+@use "blocks/page-navigation.scss";
+@use "blocks/user-navigation.scss";
+@use "blocks/main-index.scss";
+@use "blocks/hero.scss";
+@use "blocks/slider-list.scss";
+@use "blocks/button.scss";
+@use "blocks/features.scss";
+@use "blocks/catalog.scss";
+@use "blocks/form.scss";
+@use "blocks/product-card.scss";
+@use "blocks/map.scss";
+@use "blocks/footer.scss";
+@use "blocks/footer-navigation.scss";
