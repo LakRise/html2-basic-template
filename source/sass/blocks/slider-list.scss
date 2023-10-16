@@ -20,7 +20,7 @@
       padding: 0 40px 0 65px;
       display: grid;
       grid-template-columns: 600px auto;
-      grid-template-rows: 140px auto;
+      grid-template-rows: 120px auto;
       align-items: flex-start;
       gap: 30px;
     }
@@ -76,7 +76,7 @@
 }
 
 .slider-list__image {
-  margin: 0 0 25px;
+  margin: 0 0 5px;
   object-fit: contain;
 
   @media (min-width: variables.$tablet-width) {
@@ -89,10 +89,6 @@
     width: 600px;
     height: 600px;
   }
-}
-
-.slider-list__title-wrapper {
-  position: relative;
 }
 
 .slider-list__title {
@@ -118,14 +114,13 @@
 
 .slider-list__badge {
   @include badge;
-  margin: 0;
+  margin: 0 auto 4px;
   padding: 0;
-  position: absolute;
-  top: -20px;
-  left: calc(50% - 37px);
+  text-align: center;
 
   @media (min-width: variables.$desktop-width) {
-    left: 0;
+    margin: 0 0 4px;
+    text-align: left;
   }
 }
 
@@ -157,12 +152,24 @@
   }
 }
 
+.slider-list__description-repositioned {
+  @media (min-width: variables.$tablet-width) {
+    transform: translateX(3px);
+    display: inline-block;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    transform: translate(0);
+    display: inline;
+  }
+}
+
 .slider-list__order-wrapper {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: start;
   flex-wrap: wrap;
   gap: 16px;
 
@@ -201,7 +208,15 @@
   min-width: 52px;
 }
 
-.slider-list__button {
-  transform: translateX(1px);
+.slider-list__button.button {
   width: 113px;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 9px 20px 7px 20px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    transform: translateX(1px);
+  }
 }
+

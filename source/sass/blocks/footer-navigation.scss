@@ -17,6 +17,7 @@
 .footer-navigation__link {
   padding: 8px 0;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   color: variables.$text-color-1;
   text-decoration: none;

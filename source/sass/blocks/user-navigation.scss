@@ -1,24 +1,31 @@
 @use "../global/variables.scss";
 
 .user-navigation {
+  margin: 0;
+  max-width: 140px;
+
   @media (min-width: variables.$desktop-width) {
+    max-width: 300px;
     gap: 20px;
   }
 }
 
 .user-navigation__link {
+  margin: 0;
+  padding: 22px 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-width: 60px;
   min-height: 60px;
 
   @media (min-width: variables.$tablet-width) {
+    padding: 32px 0;
     min-height: 80px;
   }
 
   @media (min-width: variables.$desktop-width) {
-    padding: 0 20px;
+    padding: 32px 20px;
     justify-content: space-between;
     gap: 8px;
   }
@@ -30,4 +37,8 @@
   @media (min-width: variables.$desktop-width) {
     display: block;
   }
+}
+
+.user-navigation__icon {
+  flex-shrink: 0;
 }

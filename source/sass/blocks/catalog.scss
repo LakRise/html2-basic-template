@@ -61,7 +61,7 @@
   padding: 0 0 0 3px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 
   @media (min-width: variables.$tablet-width) {
@@ -72,14 +72,15 @@
   }
 
   @media (min-width: variables.$desktop-width) {
-    transform: translateY(-4px);
+    padding-right: 4px;
+    transform: translateY(-3px);
     margin-bottom: 21px;
   }
 }
 
 .catalog__select-label {
   margin: 0;
-  padding: 0;
+  padding: 4px 0 0;
   max-width: 110px;
   font-size: 16px;
   font-weight: 600;
@@ -93,7 +94,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 165px;
+  max-width: 162px;
   font-family: inherit;
   font-size: 16px;
   font-weight: 600;

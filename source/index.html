@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Drink2Go</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="images/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/favicons/apple-icon-180x180.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" crossorigin="anonymous">
@@ -13,8 +18,8 @@
       <div class="header__container container">
         <a class="header__logo logo" href="index.html">
           <picture>
-            <source media="(min-width: 1440px)" srcset="images/logo-long.svg">
-            <source media="(min-width: 768px)" srcset="images/logo-short.svg">
+            <source type="image/svg+xml" media="(min-width: 1440px)" srcset="images/logo-long.svg">
+            <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logo-short.svg">
             <img class="logo__image" src="images/logo-small.svg" width="32" height="36" alt="Логотип Drink2Go.">
           </picture>
           <span class="logo__text">Интернет-магазин кофейных напитков</span>
@@ -95,12 +100,11 @@
                 </picture>
               </div>
               <div class="slider-list__content-wrapper">
-                <div class="slider-list__title-wrapper">
-                  <h3 class="slider-list__title">Декаф Флэт Уайт</h3>
-                  <p class="slider-list__badge">Новинка!</p>
-                </div>
-                <p class="slider-list__description">Свежесваренный кофе без кофеина из Эфиопии&nbsp;<br>с натуральным фермерским молоком — то, что нужно&nbsp;<br>для расслабления после
-                тяжёлого рабочего дня</p>
+                <p class="slider-list__badge">Новинка!</p>
+                <h3 class="slider-list__title">Декаф Флэт Уайт</h3>
+                <p class="slider-list__description">
+                  <span class="slider-list__description-repositioned">Свежесваренный кофе без кофеина из Эфиопии&nbsp;<br>с натуральным фермерским молоком — то, что нужно&nbsp;<br></span>
+                  для расслабления после тяжёлого рабочего дня</p>
                 <div class="slider-list__order-wrapper">
                   <div class="slider-list__price">
                     <span class="slider-list__old-price">295₽</span>
@@ -124,10 +128,8 @@
                 </picture>
               </div>
               <div class="slider-list__content-wrapper">
-                <div class="slider-list__title-wrapper">
-                  <h3 class="slider-list__title">Лавандовый Латте</h3>
-                  <p class="slider-list__badge">Новинка!</p>
-                </div>
+                <p class="slider-list__badge">Новинка!</p>
+                <h3 class="slider-list__title">Лавандовый Латте</h3>
                 <p class="slider-list__description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину
                 Радужных гор</p>
                 <div class="slider-list__order-wrapper">
@@ -153,10 +155,8 @@
                 </picture>
               </div>
               <div class="slider-list__content-wrapper">
-                <div class="slider-list__title-wrapper">
-                  <h3 class="slider-list__title">Тройной Эспрессо</h3>
-                  <p class="slider-list__badge">Новинка!</p>
-                </div>
+                <p class="slider-list__badge">Новинка!</p>
+                <h3 class="slider-list__title">Тройной Эспрессо</h3>
                 <p class="slider-list__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая
                 бодрость</p>
                 <div class="slider-list__order-wrapper">
@@ -189,17 +189,17 @@
             <li class="hero__slider-pagination-item">
               <button class="hero__slider-pagination-link hero__slider-pagination-link--active" type="button">
               <span class="visually-hidden">Первый слайд</span>
-              </a>
+              </button>
             </li>
             <li class="hero__slider-pagination-item">
               <button class="hero__slider-pagination-link" type="button">
               <span class="visually-hidden">Второй слайд</span>
-              </a>
+              </button>
             </li>
             <li class="hero__slider-pagination-item">
               <button class="hero__slider-pagination-link" type="button">
               <span class="visually-hidden">Третий слайд</span>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -236,24 +236,16 @@
             <form class="catalog__form form" action="https://echo.htmlacademy.ru" method="post">
               <fieldset class="form__group">
                 <legend class="form__title">Цена</legend>
-                <div class="form__range">
-                  <div class="form__range-bar" style="left:0; width:120px">
-                    <button class="form__range-toggle form__range-toggle--min" type="button">
-                      <span class="visually-hidden">Изменить минимальную цену</span>
-                    </button>
-                    <button class="form__range-toggle form__range-toggle--max" type="button">
-                      <span class="visually-hidden">Изменить максимальную цену</span>
-                    </button>
-                  </div>
+                <div class="form__range range-slider">
                 </div>
                 <div class="form__price-wrapper">
                   <label class="form__label">
                     <span class="visually-hidden">от</span>
-                    <input class="form__input" type="number" name="min-range" min="0" placeholder="0">
+                    <input class="form__input form__input-min" type="number" name="min-range" min="0" placeholder="0" required>
                   </label>
                   <label class="form__label">
                     <span class="visually-hidden">до</span>
-                    <input class="form__input" type="number" name="max-range" min="0" placeholder="900" value="900">
+                    <input class="form__input form__input-max" type="number" name="max-range" min="0" placeholder="900" value="900" required>
                   </label>
                 </div>
               </fieldset>
@@ -511,7 +503,7 @@
           <h2 class="visually-hidden">Наши соц сети</h2>
           <a class="footer__logo logo" href="index.html">
             <picture>
-              <source media="(min-width: 768px)" srcset="images/logo-long.svg">
+              <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logo-long.svg">
               <img class="logo__image logo__image--footer" src="images/logo-short.svg" width="82" height="36" alt="Логотип Drink2Go.">
             </picture>
             <span class="logo__text logo__text--footer">Интернет-магазин кофейных напитков</span>
@@ -625,6 +617,7 @@
         </a>
       </div>
     </footer>
-    <script src="js/script.js" type="module" defer></script>
+    <script src="vendor/nouislider/nouislider.js"></script>
+    <script src="js/script.js" type="module"></script>
   </body>
 </html>

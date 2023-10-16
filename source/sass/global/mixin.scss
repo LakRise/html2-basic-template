@@ -8,6 +8,14 @@
   color: #7859cf;
   letter-spacing: 0.48px;
   text-transform: uppercase;
+
+  @media (min-width: variables.$tablet-width) {
+    max-width: 220px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    max-width: 550px;
+  }
 }
 
 @mixin new-price {

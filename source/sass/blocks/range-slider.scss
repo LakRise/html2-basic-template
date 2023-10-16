@@ -1,0 +1,106 @@
+@use "../global/variables.scss";
+
+.range-slider {
+  transform: translateY(1px);
+  margin: 9px 0 36px;
+  padding: 0 16px 0 7px;
+  width: 100%;
+  height: 2px;
+  background-color: #e2e2e2;
+  border: none;
+  border-radius: none;
+  box-shadow: none;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 32px;
+    max-width: 223px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 34px;
+    max-width: 318px;
+  }
+}
+
+.range-slider__element.noUi-base {
+  transform: translateY(-1px);
+  height: 4px;
+}
+
+.range-slider__element.noUi-connect {
+  background-color: #9070ec;
+
+  &--disabled {
+    background-color: #bdbdbd;
+  }
+}
+
+.range-slider__element.noUi-touch-area {
+  display: none;
+}
+
+.range-slider__element .noUi-handle-upper {
+  transform: translate(0, -4px);
+}
+
+.range-slider__element .noUi-handle-lower {
+  transform: translate(0, -4px);
+}
+
+.range-slider__element .noUi-handle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: variables.$main-color-1;
+  border: 2px solid #9070ec;
+  border-radius: 50%;
+  box-shadow: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &::before {
+    position: static;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: inherit;
+    transition: all 0.2s ease;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &:hover::before {
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::before {
+      background-color: rgba(120, 89, 207, 0.25);
+    }
+  }
+
+  &:active {
+    border-color: variables.$main-color-2;
+
+    &::before {
+      background-color: variables.$main-color-2;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    border-color: #bdbdbd;
+
+    &::before {
+      background-color: #f8f8f8;
+    }
+  }
+}
+

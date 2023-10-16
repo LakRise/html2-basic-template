@@ -34,12 +34,14 @@
 .logo__text {
   padding-top: 2px;
   display: none;
+  min-width: 126px;
   font-size: 12px;
   line-height: 16px;
   color: variables.$text-color-1;
 
   &--footer {
     padding: 0;
+    min-width: 318px;
     font-size: 14px;
     line-height: 20px;
   }

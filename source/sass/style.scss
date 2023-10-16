@@ -5,12 +5,12 @@
 @use "blocks/visually-hidden.scss";
 @use "blocks/header.scss";
 @use "blocks/logo.scss";
+@use "blocks/button.scss";
 @use "blocks/page-navigation.scss";
 @use "blocks/user-navigation.scss";
 @use "blocks/main-index.scss";
 @use "blocks/hero.scss";
 @use "blocks/slider-list.scss";
-@use "blocks/button.scss";
 @use "blocks/features.scss";
 @use "blocks/catalog.scss";
 @use "blocks/form.scss";
@@ -18,3 +18,4 @@
 @use "blocks/map.scss";
 @use "blocks/footer.scss";
 @use "blocks/footer-navigation.scss";
+@use "blocks/range-slider.scss";

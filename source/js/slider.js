@@ -12,7 +12,7 @@ const changeSlider = (index) => {
   slides[index].classList.add('slider-list__item--active');
   hero.querySelector('.hero__slider-pagination-link--active').classList.remove('hero__slider-pagination-link--active');
   pagination[index].querySelector('.hero__slider-pagination-link').classList.add('hero__slider-pagination-link--active');
-}
+};
 
 const onSlideClick = (evt) => {
   if (!evt.target.closest('.slider-button-prev')
@@ -35,23 +35,23 @@ const onSlideClick = (evt) => {
     changeSlider(paginationIndex);
   }
   if (slides.indexOf(sliderList.querySelector('.slider-list__item--active')) === 0) {
-    sliderButtonLeft.classList.add('hero__slider-button--disabled');
-  } else if (sliderButtonLeft.classList.contains('hero__slider-button--disabled')) {
-    sliderButtonLeft.classList.remove('hero__slider-button--disabled');
+    sliderButtonLeft.setAttribute('disabled', '');
+  } else if (sliderButtonLeft.hasAttribute('disabled')) {
+    sliderButtonLeft.removeAttribute('disabled');
   }
   if (slides.indexOf(sliderList.querySelector('.slider-list__item--active')) === (slides.length - 1)) {
-    sliderButtonRight.classList.add('hero__slider-button--disabled');
-  } else if (sliderButtonRight.classList.contains('hero__slider-button--disabled')) {
-    sliderButtonRight.classList.remove('hero__slider-button--disabled');
+    sliderButtonRight.setAttribute('disabled', '');
+  } else if (sliderButtonRight.hasAttribute('disabled')) {
+    sliderButtonRight.removeAttribute('disabled');
   }
 };
 
 const setSlider = () => {
   if (slides.indexOf(sliderList.querySelector('.slider-list__item--active')) === 0) {
-    sliderButtonLeft.classList.add('hero__slider-button--disabled');
+    sliderButtonLeft.setAttribute('disabled', '');
   }
   if (slides.indexOf(sliderList.querySelector('.slider-list__item--active')) === (slides.length - 1)) {
-    sliderButtonRight.classList.add('hero__slider-button--disabled');
+    sliderButtonRight.setAttribute('disabled', '');
   }
   hero.addEventListener('click', onSlideClick);
 };

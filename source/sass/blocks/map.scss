@@ -1,11 +1,23 @@
 @use "../global/variables.scss";
 
 .map {
+  margin: 0;
+  padding: 0;
+  height: fit-content;
   overflow: hidden;
 }
 
 .map__container {
+  height: 420px;
   overflow: visible;
+
+  @media (min-width: variables.$tablet-width) {
+    height: 480px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    height: 540px;
+  }
 }
 
 .map__image {
